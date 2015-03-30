@@ -234,6 +234,10 @@
         </section>
 
         <section>
+          <img src="./imgs/tabs_and_spaces.png">
+        </section>
+
+        <section>
           <h2>Code Style</h2>
           <p>
             Decided by majority, enforced via <a href="http://editorconfig.com">EditorConfig</a>.
@@ -353,16 +357,6 @@ indent_style = tab
 				</section>
 
 				<section>
-					<h2>Get Notified</h2>
-          <img src="./imgs/travis.png">
-          <aside class="notes">
-            Travis runs on each commit and alerts us in Slack if something breaks.
-            W/ Slack notifications, it is kinda a "set it and forget it" model.
-            Enjoy using Travis because tests run in "clean" containers each time, and keeps things compartmentalized.
-          </aside>
-				</section>
-
-				<section>
 					<h2>.travis.yml</h2>
           <pre>
 language: ruby
@@ -383,6 +377,16 @@ install:
           <aside class="notes">
             Using Travis-CI makes sure that we don't have any one-off dependancies met because tests are run in a fresh container each time. Scripts must be complete!
             before_script and install sections end up looking a lot like our Ansible script
+          </aside>
+				</section>
+
+				<section>
+					<h2>Get Notified</h2>
+          <img src="./imgs/travis.png">
+          <aside class="notes">
+            Travis runs on each commit and alerts us in Slack if something breaks.
+            W/ Slack notifications, it is kinda a "set it and forget it" model.
+            Enjoy using Travis because tests run in "clean" containers each time, and keeps things compartmentalized.
           </aside>
 				</section>
 
