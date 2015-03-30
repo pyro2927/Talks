@@ -4,10 +4,9 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>Joe's Awesome Presentation</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<meta name="author" content="Joe Pintozzi">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -41,7 +40,15 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Team Collaboration</h1>
+					<h1>Brad</h1>
+          <img src="./imgs/brad.png">
+          <aside class="notes">
+            Brad said he would come if I made this talk all about him.
+          </aside>
+				</section>
+
+				<section>
+					<h1>Team Collaboration & Other Stuff</h1>
 					<h3>(sometimes with non-developers)</h3>
 					<p>
 						<small>Created by <a href="http://pintozzi.com">Joseph Pintozzi</a> / <a href="http://twitter.com/pyro2927">@pyro2927</a></small>
@@ -49,10 +56,106 @@
 				</section>
 
         <section>
+          <h2>About Me</h2>
+          <p>
+            Work at Evolve Labs, primarily Rails developer, with some system administration mixed in.
+          </p>
+          <img src="./imgs/evolve_spoon.png">
+          <aside class="notes">
+            Here in Minneapolis. Work on software that makes gaming better. Stuff like VoIP, peer-to-peer chat, game tracking, etc.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Background</h2>
+          <p>
+            Java -> PHP -> HTML/CSS -> iOS -> Android(Java... again) -> Ruby
+          </p>
+          <aside class="notes">
+            Haven't always been a ruby dev. Call me a language-slut if you wish
+          </aside>
+        </section>
+
+        <section>
           <h2>The Evolve Team</h2>
-          <img src="./imgs/">
+          <img src="./imgs/evolve_team.png">
           <aside class="notes">
             Provide background to explain our setup, I'm primary Rails dev but Sam pitches in. Blair helps lead roadmapping.
+            Other 2 guys are C++ devs primarily.
+          </aside>
+        </section>
+
+        <section>
+          <img src="./imgs/share_load.jpg">
+          <aside class="notes">
+            Share the load, AKA allow <b>everyone</b> to participate.
+            PRs, coding, testing, roadmapping, whatever
+          </aside>
+        </section>
+
+        <section>
+          <h2>Share the Load</h2>
+          <p>
+            Make it easy for everyone. Don't be the sole gatekeeper.
+          </p>
+          <aside class="notes">
+            Gatekeeper == bottlekneck
+            GitHub has everyone deploy on their first day. Strive for low-friction contributions. Setup Capistrano on day 1 and let junior devs and non-devs deploy.
+            Also works as a least common-denominator. If you make stuff so easy a non-dev can use it, you'll only help yourself in keeping things easy.
+            For a while I was the only dev who knew how to restart our production servers.
+            "Hit by a bus" stuff.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Prioritizing Tasks</h2>
+          <p>
+            Roadmap, and stick to it.
+          </p>
+          <aside class="notes">
+            Tasks are listed chronologically, easy to see if one developer is ahead of another and needs to "jump back" to lend a hand.
+            IE: If I need to go back and help Sam with Ruby stuff, or if he needs to do the same for HTML/CSS work for me.
+            Hardest part for me is sticking to a release schedule.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Roadmap</h2>
+          <img style="height: 600px" src="./imgs/roadmap.png">
+          <aside class="notes">
+            We use Confluence/Jira.
+            Nice to use a tool dedicated to roadmapping, easy to navigate and use.
+          </aside>
+        </section>
+
+        <section>
+          <h3>"Not in this release"</h3>
+          <aside class="notes">
+            Often hear, "Not in this release".
+            Sometimes you don't get to work on the fun pieces.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Make things Easy</h2>
+          <img src="./imgs/easy_button.jpg">
+          <aside class="notes">
+            Things that may be easy for a Rails developer, may not be easy for one of their teammates
+          </aside>
+        </section>
+
+        <section>
+          <h2>Dev Environment</h2>
+          <p>
+            Vagrant + Ansible
+          </p>
+          <img src="./imgs/vagrant_chilling.png">
+          <p>
+            Development environment setup with a single command:<pre>vagrant up</pre>
+          </p>
+          <aside class="notes">
+            Big benefit to using Ansible is that we can re-target a "cloud" server to prepare a machine for production use.
+            I like the old Vagrant logo better
           </aside>
         </section>
 
@@ -66,7 +169,44 @@
             (and feel free to ocassionally <strike>nag</strike> remind)
 					</p>
           <aside class="notes">
+            One question I get often is "what is the best way to handle PRs?".
             Hold people accountable, give them direct responsibility.
+            Even if there are a few people on a team, assign our PRs.
+            Threaten to merge after a day or two.
+            "I know it works, I'm going to merge it in tomorrow if no one else reviews it"
+          </aside>
+        </section>
+
+        <section>
+          <img src="./imgs/bad_pr.png">
+          <aside class="notes">
+            Bad PR
+            What API? What is considered public data?
+          </aside>
+        </section>
+
+        <section>
+          <img src="./imgs/good_pr.png">
+          <aside class="notes">
+            Good PR vs bad PR
+            Good to include a picture, inline is even nicer.
+          </aside>
+        </section>
+
+        <section>
+          <img src="./imgs/great_pr.png">
+          <aside class="notes">
+            Great PR!
+            Include documentation on how to run tests, even if it's just <pre>bundle exec rspec spec</pre>
+            We complain all the time about something being thrown "over the wall", don't do that to another dev.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Pictures are Helpful</h2>
+          <img src="./imgs/calendar_export.png">
+          <aside class="notes">
+            Especially when it is a FE change
           </aside>
         </section>
 
@@ -77,6 +217,7 @@
 					</p>
           <aside class="notes">
             Developers can disagree on code styles, editors, OSs, all sorts of things.
+            Consistency is key
           </aside>
         </section>
 
@@ -109,6 +250,10 @@ charset = utf-8
 [*.rb]
 indent_style = space
 indent_size = 2
+
+# tabs for HTML & erb
+[*.{html,erb}]
+indent_style = tab
           </pre>
           <aside class="notes">
             Line endings can be an actual issue, as we've seen with Windows developers trying to run cross-platform code. Dreaded ^M
@@ -119,56 +264,28 @@ indent_size = 2
           <h2>EditorConfig Plugins</h2>
           <img style="height: 600px" src="./imgs/editor_config_plugins.png">
           <aside class="notes">
+            Emacs, Vim, Visual Studio, SublimeText and TextMate
             Supported by all main editors. If you're fancy enough to use something more obscure, you're probably good enough to just follow the code style-guide.
           </aside>
         </section>
 
         <section>
-          <h2>Prioritizing Tasks</h2>
+          <h2>Code for the Edge Case</h2>
           <p>
-            Roadmap, and stick to it.
+            Find situations where code WON'T work.
           </p>
           <aside class="notes">
-            Tasks are listed chronologically, easy to see if one developer is ahead of another and needs to "jump back" to lend a hand.
-            IE: If I need to go back and help Sam with Ruby stuff, or if he needs to do the same for HTML/CSS work for me.
-            Hardest part for me is sticking to a release schedule.
+            Turn it into a game. Sometimes it is easier to find a problem in someone else's code rather than your own.
           </aside>
         </section>
 
         <section>
-          <h2>Roadmap</h2>
-          <img style="height: 600px" src="./imgs/roadmap.png">
-          <aside class="notes">
-            We use Confluence/Jira.
-            Nice to use a tool dedicated to roadmapping, easy to navigate and use.
-          </aside>
-        </section>
-
-        <section>
-          <img src="./imgs/share_load.jpg">
-          <aside class="notes">
-            Share the load, AKA allow <b>everyone</b> to participate.
-          </aside>
-        </section>
-
-        <section>
-          <h2>Share the Load</h2>
+          <h2>Seeds are Your Friend</h2>
           <p>
-            Make it easy for everyone. Don't be the sole gatekeeper.
+            Populate the development database with a metric shit-ton of data.
           </p>
           <aside class="notes">
-            GitHub has everyone deploy on their first day. Strive for low-friction contributions. Setup Capistrano on day 1 and let junior devs and non-devs deploy.
-            Also works as a least common-denominator. If you make stuff so easy a non-dev can use it, you'll only help yourself in keeping things easy.
-          </aside>
-        </section>
-
-        <section>
-          <h2>Dev Environment</h2>
-          <p>
-            Vagrant + Ansible
-          </p>
-          <aside class="notes">
-            Big benefit to using Ansible is that we can re-target a "cloud" server to prepare a machine for production use.
+            Coded a "past" view, once we seeded 5000 records, it took over 2 minutes to render the page. Forces devs (FE and ruby) to consider controller views. Things like pagination become clear. You'll find areas you need to add caching or other helpful things.
           </aside>
         </section>
 
@@ -178,9 +295,21 @@ indent_size = 2
             Tests will ensure nothing breaks.
 					</p>
           <aside class="notes">
-            Setup a system that alerts you immedietly upon breakage.
+            Setup a system that alerts you immedietly upon breakage. Notifications and automated tests are wonderful.
+            Rails developers don't need to be told to use tests, but once you start interacting with developers you might find one who hasn't heard of tests before.
           </aside>
 				</section>
+
+        <section>
+          <img src="./imgs/ten_thousand.png">
+          <aside class="notes">
+            There are developers who haven't heard of or used tests before, don't look down on them.
+          </aside>
+        </section>
+
+        <section>
+          <img src="./imgs/test_docs.png">
+        </section>
 
 				<section>
 					<h2>Super Tests!</h2>
@@ -202,9 +331,22 @@ indent_size = 2
 
 				<section>
 					<h2>Travis-CI</h2>
+          <img src="./imgs/github_travis.png">
+          <aside class="notes">
+            "How many people have had a breaking change merged into master?"
+            Keep notifications automated and asyncronous. Troublesome area is keeping the noise-to-signal ratio low. For now we keep a separate channel in Slack.
+            Integrate it into your workflow.
+            Sometimes not running tests can be a slippery slope
+          </aside>
+				</section>
+
+				<section>
+					<h2>Get Notified</h2>
           <img src="./imgs/travis.png">
           <aside class="notes">
             Travis runs on each commit and alerts us in Slack if something breaks.
+            W/ Slack notifications, it is kinda a "set it and forget it" model.
+            Enjoy using Travis because tests run in "clean" containers each time, and keeps things compartmentalized.
           </aside>
 				</section>
 
@@ -228,6 +370,25 @@ install:
           </pre>
           <aside class="notes">
             Using Travis-CI makes sure that we don't have any one-off dependancies met because tests are run in a fresh container each time. Scripts must be complete!
+            before_script and install sections end up looking a lot like our Ansible script
+          </aside>
+				</section>
+
+				<section>
+					<h2>Keep Tests Snappy!</h2>
+          <img src="./imgs/rspec_results.png">
+          <aside class="notes">
+            Extra tid-bit, keep tests fast. Fast tests will get run more often.
+          </aside>
+				</section>
+
+				<section>
+					<h2>config.before(:suite)</h2>
+          <p>
+            Switching out in place of config.before(:all) reduced test time by 75%
+          </p>
+          <aside class="notes">
+            Has to use <pre>config.add_setting :ldap_server</pre> because instance variables weren't usable.
           </aside>
 				</section>
 
