@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js - The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Team Collaboration</h1>
+					<h3>(sometimes with non-developers)</h3>
+					<p>
+						<small>Created by <a href="http://pintozzi.com">Joseph Pintozzi</a> / <a href="http://twitter.com/pyro2927">@pyro2927</a></small>
+					</p>
+				</section>
+
+        <section>
+          <h2>The Evolve Team</h2>
+          <img src="./imgs/">
+          <aside class="notes">
+            Provide background to explain our setup, I'm primary Rails dev but Sam pitches in. Blair helps lead roadmapping.
+          </aside>
+        </section>
+
+        <section>
+          <h2>PR Handling</h2>
+          <p>
+            Assign them!
+					</p>
+          <img src="./imgs/pr_assign.png">
+          <p>
+            (and feel free to ocassionally <strike>nag</strike> remind)
+					</p>
+          <aside class="notes">
+            Hold people accountable, give them direct responsibility.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Tabs or Spaces?!?!</h2>
+          <p>
+            Spaces, obviously.
+					</p>
+          <aside class="notes">
+            Developers can disagree on code styles, editors, OSs, all sorts of things.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Code Style</h2>
+          <p>
+            Decided by majority, enforced via <a href="http://editorconfig.com">EditorConfig</a>.
+					</p>
+          <img src="./imgs/editorconfig.png">
+          <aside class="notes">
+            Majority can be outweighed by a senior developer. Easy to combined mulitple types of styles into a single <pre>.editorconfig</pre>.
+            Allows developers to use whatever tools they want while still adhearing to the same code standards.
+          </aside>
+        </section>
+
+        <section>
+          <h2>.editorconfig</h2>
+          <pre>
+# Unix-style newlines with a newline ending every file
+[*]
+end_of_line = lf
+insert_final_newline = true
+
+# Matches multiple files with brace expansion notation
+# Set default charset
+[*.{js,py}]
+charset = utf-8
+
+# 2 space indentation
+[*.rb]
+indent_style = space
+indent_size = 2
+          </pre>
+          <aside class="notes">
+            Line endings can be an actual issue, as we've seen with Windows developers trying to run cross-platform code. Dreaded ^M
+          </aside>
+        </section>
+
+        <section>
+          <h2>EditorConfig Plugins</h2>
+          <img style="height: 600px" src="./imgs/editor_config_plugins.png">
+          <aside class="notes">
+            Supported by all main editors. If you're fancy enough to use something more obscure, you're probably good enough to just follow the code style-guide.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Prioritizing Tasks</h2>
+          <p>
+            Roadmap, and stick to it.
+          </p>
+          <aside class="notes">
+            Tasks are listed chronologically, easy to see if one developer is ahead of another and needs to "jump back" to lend a hand.
+            IE: If I need to go back and help Sam with Ruby stuff, or if he needs to do the same for HTML/CSS work for me.
+            Hardest part for me is sticking to a release schedule.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Roadmap</h2>
+          <img style="height: 600px" src="./imgs/roadmap.png">
+          <aside class="notes">
+            We use Confluence/Jira.
+            Nice to use a tool dedicated to roadmapping, easy to navigate and use.
+          </aside>
+        </section>
+
+        <section>
+          <img src="./imgs/share_load.jpg">
+          <aside class="notes">
+            Share the load, AKA allow <b>everyone</b> to participate.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Share the Load</h2>
+          <p>
+            Make it easy for everyone. Don't be the sole gatekeeper.
+          </p>
+          <aside class="notes">
+            GitHub has everyone deploy on their first day. Strive for low-friction contributions. Setup Capistrano on day 1 and let junior devs and non-devs deploy.
+            Also works as a least common-denominator. If you make stuff so easy a non-dev can use it, you'll only help yourself in keeping things easy.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Dev Environment</h2>
+          <p>
+            Vagrant + Ansible
+          </p>
+          <aside class="notes">
+            Big benefit to using Ansible is that we can re-target a "cloud" server to prepare a machine for production use.
+          </aside>
+        </section>
+
+				<section>
+					<h2>Don't Trample Each Other's Work</h2>
+					<p>
+            Tests will ensure nothing breaks.
+					</p>
+          <aside class="notes">
+            Setup a system that alerts you immedietly upon breakage.
+          </aside>
+				</section>
+
+				<section>
+					<h2>Super Tests!</h2>
+					<p>
+            Rspec, FactoryGirl, VCR, Simplecov, and Ladle
+					</p>
+          <aside class="notes">
+            Basic setup, simplecov to ensure code coverage, Ladle allows quick and easy LDAP usage without cluttering actual LDAP installation.
+          </aside>
+				</section>
+
+				<section>
+					<h2>SimpleCov</h2>
+          <img src="./imgs/simplecov.png">
+          <aside class="notes">
+            We don't strive for 100%, but we try to get high and make sure the potential problematic areas well.
+          </aside>
+				</section>
+
+				<section>
+					<h2>Travis-CI</h2>
+          <img src="./imgs/travis.png">
+          <aside class="notes">
+            Travis runs on each commit and alerts us in Slack if something breaks.
+          </aside>
+				</section>
+
+				<section>
+					<h2>.travis.yml</h2>
+          <pre>
+language: ruby
+rvm:
+  - 2.2.1
+bundler_args: "--without production"
+script:
+  - rake db:test:prepare
+  - bundle exec rspec spec
+before_script:
+  - psql -c "CREATE USER evolve WITH SUPERUSER" -U postgres
+before_install:
+  - sudo apt-get update
+install:
+  - sudo apt-get install default-jre-headless
+  - bundle install --without production
+          </pre>
+          <aside class="notes">
+            Using Travis-CI makes sure that we don't have any one-off dependancies met because tests are run in a fresh container each time. Scripts must be complete!
+          </aside>
+				</section>
+
+				<section style="text-align: left;">
+					<h1>THE END</h1>
+					<p>
+						Questions?
+					</p>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
